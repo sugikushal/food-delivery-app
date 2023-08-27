@@ -1,7 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-const restaurantList = [
+export const restaurantList = [
   {
     info: {
       id: "93797",
@@ -1732,73 +1729,3 @@ const restaurantList = [
     },
   },
 ];
-
-const RestaurantCard = (props) => {
-  const {restaurantInfo} = props;
-  const {name, cuisines, avgRating, costForTwo, cloudinaryImageId} = restaurantInfo?.info;
-  const {deliveryTime} = restaurantInfo?.info?.sla;
-
-  return (
-    <div className="restaurant-card">
-      <img
-        className="restaurant-img"
-        src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + cloudinaryImageId}
-        alt="no img"
-      />
-      <div className="restaurant-name">{name}</div>
-      <div className="restaurant-cuisine">{cuisines.join(", ")}</div>
-      <div className="restaurant-cuisine">{costForTwo}</div>
-      <div className="restaurant-cuisine">{avgRating}</div>
-      <div className="restaurant-cuisine">{deliveryTime} minutes</div>
-    </div>
-  );
-};
-
-const Header = () => {
-  return (
-    <div className="header">
-      <img
-        className="logo"
-        src="https://png.pngtree.com/template/20200610/ourmid/pngtree-food-delivery-logo-design-image_381319.jpg"
-      />
-      <div className="nav-items">
-        <ul className="nav-items-ul">
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-const Body = () => {
-  return (
-    <div className="body">
-      <input className="search" placeholder="Search for Restaurants"></input>
-      <div className="card-container">
-        {
-          restaurantList.map(restaurant => (
-            <RestaurantCard key={restaurant.info.id} restaurantInfo = {restaurant}/>
-          ))
-        }
-      </div>
-    </div>
-  );
-};
-const Footer = () => {
-  return <div className="footer">Footer</div>;
-};
-
-const App = () => {
-  return (
-    <div className="spp-component">
-      <Header />
-      <Body />
-      <Footer />
-    </div>
-  );
-};
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(<App />);
