@@ -17,9 +17,13 @@
 }
 .card-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-flow: row wrap;
+    justify-content: space-between;
 }
+.card-container::after {
+    content: "";
+    flex-basis: 42rem;
+  }
 .restaurant-card{
     display: flex;
     flex-direction: column;
@@ -53,4 +57,20 @@
 .restaurant-cuisine {
     text-align: left;
     font-size: smaller;
+}
+.login {
+    height: min-content;
+    margin-top: 13px;
+    margin-left: 5px;
+}
+.react-link{
+    color: black; 
+    text-decoration: none;
+}
+.react-link:hover { 
+    color: orange; 
+}
+.footer{
+    position: fixed;
+    bottom: 0px;
 }
