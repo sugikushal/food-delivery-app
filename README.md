@@ -1,1 +1,1 @@
-# Namaste React
+# Restaurant Application
