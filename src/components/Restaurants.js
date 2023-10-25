@@ -1,22 +1,9 @@
 import RestaurantCard from "./RestaurantCard";
-import { RESTAURANT_LIST } from "../utils/constants";
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import useRestaurantList from "../utils/hooks/useRestaurantList";
 
 const Restaurants = () => {
-  const [listOfRestaurants, setListOfRestaurants] = useState([]);
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    const data = await fetch(RESTAURANT_LIST);
-    const json = await data.json();
-    setListOfRestaurants(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-  };
+  const listOfRestaurants = useRestaurantList();
 
   return (
     <div className="body">
@@ -26,7 +13,7 @@ const Restaurants = () => {
             (restaurant) => restaurant.info.avgRating > 4
           );
           console.log("filteredList", filteredList);
-          setListOfRestaurants(filteredList);
+          {/* setListOfRestaurants(filteredList); */}
         }}
       >
         Top Rated Restaurants
