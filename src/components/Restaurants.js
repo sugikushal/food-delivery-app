@@ -6,7 +6,7 @@ const Restaurants = () => {
   const listOfRestaurants = useRestaurantList();
 
   return (
-    <div className="body">
+    <div className="flex flex-col">
       <button
         onClick={() => {
           const filteredList = listOfRestaurants.filter(
@@ -18,7 +18,7 @@ const Restaurants = () => {
       >
         Top Rated Restaurants
       </button>
-      <div className="card-container">
+      <div className="flex flex-wrap justify-center">
         {listOfRestaurants.map((restaurant) => (
           <Link
             to={"/restaurant/" + restaurant.info.id}

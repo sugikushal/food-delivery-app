@@ -4,26 +4,38 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   const [loginText, setLoginText] = useState("Login");
-  console.log("Rendered");
+
   return (
-    <div className="header">
-      <img className="logo" src={LOGO} />
-      <div className="nav-items">
-        <ul className="nav-items-ul">
-          <li> <Link to="/" className="react-link">Home</Link></li>
-          <li> <Link to="/about" className="react-link">About Us</Link> </li> 
-          <li> <Link to="/contact" className="react-link">Contact Us</Link></li>
-          <li>Cart</li>
-          <button
-            className="login"
-            onClick={() => {
-              loginText === "Login" ? setLoginText("Logout") : setLoginText("Login");
-            }}
-          >
-            {loginText}
-          </button>
-        </ul>
-      </div>
+    <div className="flex justify-between shadow-lg">
+      <img className="w-24" src={LOGO} />
+      <ul className="flex items-center justify-around">
+        <li className="mx-4">
+          <Link to="/" >
+            Home
+          </Link>
+        </li>
+        <li className="mx-4">
+          <Link to="/about">
+            About Us
+          </Link>
+        </li>
+        <li className="mx-4">
+          <Link to="/contact">
+            Contact Us
+          </Link>
+        </li>
+        <li className="mx-4">Cart</li>
+        <button
+          className="mx-4"
+          onClick={() => {
+            loginText === "Login"
+              ? setLoginText("Logout")
+              : setLoginText("Login");
+          }}
+        >
+          {loginText}
+        </button>
+      </ul>
     </div>
   );
 };

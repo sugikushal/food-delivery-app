@@ -13,8 +13,8 @@ const RestaurantMenu = () => {
     const itemCards = (regular?.cards[1].card?.card?.title === "Recommended" ? regular?.cards[1].card?.card?.itemCards : regular?.cards[2].card?.card?.itemCards);
 
     return (
-        <div className="restaurant-menu">
-            <ul>
+        <div>
+            <ul className="flex flex-col place-items-center">
                 {itemCards?.map((item) => {
                     console.log(item);
                     return (

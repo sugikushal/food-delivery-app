@@ -11,6 +11,7 @@ const useRestaurantList = () => {
   const fetchData = async () => {
     const data = await fetch(RESTAURANT_LIST);
     const json = await data.json();
+    console.log(json);
     setListOfRestaurants(
       json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
