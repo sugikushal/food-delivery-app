@@ -6,7 +6,7 @@ const Header = () => {
   const [loginText, setLoginText] = useState("Login");
 
   return (
-    <div className="flex justify-between shadow-lg">
+    <div className="flex justify-between shadow-lg font-mono font-semibold">
       <img className="w-24" src={LOGO} />
       <ul className="flex items-center justify-around">
         <li className="mx-4">

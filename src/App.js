@@ -17,7 +17,7 @@ const App = () => {
     <div className="spp-component">
       <Header />
       {onlineStatus ? <Outlet /> : <h2>You seem to be offline. Check your Internet connection.</h2>}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

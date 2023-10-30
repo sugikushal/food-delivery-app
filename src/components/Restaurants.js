@@ -1,35 +1,29 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { VegRestaurant } from "./RestaurantCard";
 import { Link } from "react-router-dom";
 import useRestaurantList from "../utils/hooks/useRestaurantList";
 
 const Restaurants = () => {
   const listOfRestaurants = useRestaurantList();
-
+  const VegRestaurantCard = VegRestaurant(RestaurantCard);
   return (
-    <div className="flex flex-col">
-      <button
-        onClick={() => {
-          const filteredList = listOfRestaurants.filter(
-            (restaurant) => restaurant.info.avgRating > 4
+      <div className="flex flex-wrap m-4 justify-center">
+        {listOfRestaurants.map((restaurant) => {
+          console.log(restaurant);
+          return (
+            <Link
+              to={"/restaurant/" + restaurant.info.id}
+              key={restaurant.info.id}
+              className="react-link"
+            >
+              {restaurant.info.veg ? (
+                <VegRestaurantCard restaurantInfo={restaurant} />
+              ) : (
+                <RestaurantCard restaurantInfo={restaurant} />
+              )}
+            </Link>
           );
-          console.log("filteredList", filteredList);
-          {/* setListOfRestaurants(filteredList); */}
-        }}
-      >
-        Top Rated Restaurants
-      </button>
-      <div className="flex flex-wrap justify-center">
-        {listOfRestaurants.map((restaurant) => (
-          <Link
-            to={"/restaurant/" + restaurant.info.id}
-            key={restaurant.info.id}
-            className="react-link"
-          >
-            <RestaurantCard restaurantInfo={restaurant} />
-          </Link>
-        ))}
+        })}
       </div>
-    </div>
   );
 };
 
