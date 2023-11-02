@@ -4,6 +4,7 @@ import { lazy, Suspense } from "react";
 
 const About = lazy(() => import("../components/About"));
 const Contact = lazy(() => import("../components/Contact"));
+const Cart = lazy(() => import("../components/Cart"));
 
 const children = [
   {
@@ -29,6 +30,14 @@ const children = [
   {
     path: "/restaurant/:id",
     element: <RestaurantMenu />,
+  },
+  {
+    path: "/cart",
+    element: (
+      <Suspense fallback={<h1>Loading</h1>}>
+        <Cart />
+      </Suspense>
+    ),
   },
 ];
 

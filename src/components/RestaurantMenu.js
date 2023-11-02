@@ -51,9 +51,11 @@ const RestaurantMenu = () => {
       <RestaurantInfo restaurantInfo={restaurantInfo} />
       {itemCards?.map((item, index) => (
         <MenuItemCategory
+          key={item.card.card.title}
           data={item}
           displayItems={selectedIndex === index}
           setSelectedIndex={() => handleSelectIndex(index)}
+          restaurantInfo={restaurantInfo}
         />
       ))}
     </div>

@@ -1,8 +1,11 @@
-import {VEG, NON_VEG, MENU_ITEM_CDN_URL} from "../utils/constants";
+
+import MenuItem from "./MenuItem";
 
 const MenuItemCategory = (props) => {
+  
   const item = props.data;
-  const {displayItems, setSelectedIndex} = props;
+  const { displayItems, setSelectedIndex, restaurantInfo } = props;
+
   const handleClick = () => {
     setSelectedIndex();
   };
@@ -24,30 +27,7 @@ const MenuItemCategory = (props) => {
       {item.card.card.itemCards.map((item) => {
         return (
           displayItems && (
-            <div
-              className="flex justify-between p-4 border-b-2 border-gray-100 last:border-b-0"
-              key={item.card.info.id}
-            >
-              <div className="flex flex-col justify-start">
-                <img
-                  className="w-4 h-4 mb-2"
-                  src={item.card.info.isVeg ? VEG : NON_VEG}
-                  alt=""
-                />
-                <div className="font-mono">{item.card.info.name}</div>
-                <span className="font-mono">₹{item.card.info.price / 100}</span>
-                <span className="font-mono text-xs mt-3">
-                  {item.card.info.description}
-                </span>
-              </div>
-              {item.card.info.imageId && (
-                <img
-                  className="w-32 h-32 rounded-lg object-cover"
-                  src={MENU_ITEM_CDN_URL + item.card.info.imageId}
-                  alt=""
-                />
-              )}
-            </div>
+            <MenuItem key={item.card.info.id} item={item.card.info} restaurantInfo={restaurantInfo}/>
           )
         );
       })}
