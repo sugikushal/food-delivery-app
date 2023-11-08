@@ -8,7 +8,7 @@ const Header = () => {
   const quantity = useSelector((state) => state.cart.quantity);
 
   return (
-    <div className="flex justify-between bg-white shadow-lg font-mono font-semibold sticky top-0 left-0 right-0 z-10">
+    <div className="flex justify-between shadow-lg font-mono font-semibold">
       <img className="w-24" src={LOGO} />
       <ul className="flex items-center justify-around">
         <li className="mx-4">
