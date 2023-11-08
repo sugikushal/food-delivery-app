@@ -1,0 +1,90 @@
+{
+    "info": {
+        "id": "78970",
+        "name": "Surguru",
+        "cloudinaryImageId": "zw7dduin6k2lgwcwus9z",
+        "locality": "Gandhinagar",
+        "areaName": "Puducherry",
+        "costForTwo": "₹250 for two",
+        "cuisines": [
+            "South Indian",
+            "North Indian"
+        ],
+        "avgRating": 4.3,
+        "veg": true,
+        "feeDetails": {
+            "restaurantId": "78970",
+            "fees": [
+                {
+                    "name": "BASE_DISTANCE",
+                    "fee": 1900
+                },
+                {
+                    "name": "BASE_TIME"
+                },
+                {
+                    "name": "ANCILLARY_SURGE_FEE"
+                }
+            ],
+            "totalFee": 1900
+        },
+        "parentId": "6369",
+        "avgRatingString": "4.3",
+        "totalRatingsString": "10K+",
+        "sla": {
+            "deliveryTime": 21,
+            "lastMileTravel": 1,
+            "serviceability": "SERVICEABLE",
+            "slaString": "21 mins",
+            "lastMileTravelString": "1.0 km",
+            "iconType": "ICON_TYPE_EMPTY"
+        },
+        "availability": {
+            "nextCloseTime": "2023-11-07 22:30:00",
+            "opened": true
+        },
+        "badges": {
+            "imageBadges": [
+                {
+                    "imageId": "v1695133679/badges/Pure_Veg111.png",
+                    "description": "pureveg"
+                }
+            ]
+        },
+        "isOpen": true,
+        "aggregatedDiscountInfoV2": {},
+        "type": "F",
+        "badgesV2": {
+            "entityBadges": {
+                "imageBased": {
+                    "badgeObject": [
+                        {
+                            "attributes": {
+                                "description": "pureveg",
+                                "imageId": "v1695133679/badges/Pure_Veg111.png"
+                            }
+                        }
+                    ]
+                },
+                "textBased": {},
+                "textExtendedBadges": {}
+            }
+        },
+        "differentiatedUi": {
+            "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+            "differentiatedUiMediaDetails": {
+                "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                "lottie": {},
+                "video": {}
+            }
+        },
+        "reviewsSummary": {},
+        "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        "restaurantOfferPresentationInfo": {}
+    },
+    "analytics": {},
+    "cta": {
+        "link": "https://www.swiggy.com/restaurants/surguru-gandhinagar-puducherry-pondicherry-78970",
+        "type": "WEBLINK"
+    }
+}
